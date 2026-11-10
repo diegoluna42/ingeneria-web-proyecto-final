@@ -1,0 +1,323 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduSmart | Orientación académica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">E</span>
+    <div>
+      <strong>EduSmart</strong>
+      <small>Orientación académica inteligente</small>
+    </div>
+  </div>
+
+  <nav aria-label="Navegación principal">
+    <button class="nav-btn active" data-page="inicio">Inicio</button>
+    <button class="nav-btn" data-page="recursos">Recursos</button>
+    <button class="nav-btn" data-page="necesidades">Necesidades</button>
+    <button class="nav-btn" data-page="recomendaciones">Recomendaciones</button>
+    <button class="nav-btn" data-page="relaciones">Relaciones</button>
+    <button class="nav-btn" data-page="admin">Administración</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PÁGINA DE INICIO -->
+  <section class="page active" id="inicio">
+
+    <div class="hero">
+      <div>
+        <span class="eyebrow">
+          PLATAFORMA DE APOYO AL APRENDIZAJE
+        </span>
+
+        <h1>
+          Encuentra recursos que acompañen tu aprendizaje.
+        </h1>
+
+        <p>
+          Explora materiales académicos y descubre opciones
+          relacionadas con tus necesidades de estudio.
+        </p>
+
+        <button class="primary" data-go="recursos">
+          Explorar recursos
+        </button>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-icon">✦</div>
+        <h3>Aprendizaje conectado</h3>
+        <p>
+          Relacionamos necesidades, temas y recursos para
+          explicar por qué una opción puede ser útil.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">RESUMEN</span>
+        <h2>Tu espacio académico</h2>
+      </div>
+    </div>
+
+    <div class="stats">
+      <article class="stat">
+        <span>Recursos disponibles</span>
+        <strong id="resourceCount">6</strong>
+        <small>Materiales de ejemplo</small>
+      </article>
+
+      <article class="stat">
+        <span>Temas</span>
+        <strong>4</strong>
+        <small>Áreas de aprendizaje</small>
+      </article>
+
+      <article class="stat">
+        <span>Perfiles</span>
+        <strong>3</strong>
+        <small>Tipos de usuario</small>
+      </article>
+    </div>
+
+    <p class="notice">
+      Demostración académica: toda la información mostrada
+      es ficticia y no corresponde a registros institucionales.
+    </p>
+
+  </section>
+
+
+  <!-- PÁGINA DE RECURSOS -->
+  <section class="page" id="recursos">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">CATÁLOGO</span>
+        <h1>Recursos educativos</h1>
+        <p>Busca materiales por nombre, categoría o tema.</p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Buscar un recurso..."
+        aria-label="Buscar recursos"
+      >
+
+      <select id="categoryFilter" aria-label="Filtrar categoría">
+        <option value="">Todas las categorías</option>
+        <option>Aprendizaje</option>
+        <option>Bienestar académico</option>
+        <option>Competencias digitales</option>
+      </select>
+    </div>
+
+    <div class="cards" id="resourceList"></div>
+
+  </section>
+
+
+  <!-- PÁGINA DE NECESIDADES -->
+  <section class="page" id="necesidades">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">IDENTIFICACIÓN</span>
+        <h1>¿Qué deseas fortalecer?</h1>
+        <p>
+          Selecciona una necesidad de ejemplo para explorar
+          recursos relacionados.
+        </p>
+      </div>
+    </div>
+
+    <div class="panel">
+
+      <label for="needSelect">
+        Necesidad académica
+      </label>
+
+      <select id="needSelect">
+        <option value="organizacion">
+          Mejorar la organización del estudio
+        </option>
+
+        <option value="lectura">
+          Fortalecer la comprensión lectora
+        </option>
+
+        <option value="digital">
+          Desarrollar competencias digitales
+        </option>
+
+        <option value="estres">
+          Manejar la carga académica
+        </option>
+      </select>
+
+      <button class="primary" id="recommendBtn">
+        Consultar recomendaciones
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- PÁGINA DE RECOMENDACIONES -->
+  <section class="page" id="recomendaciones">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">RESULTADOS</span>
+        <h1>Recomendaciones</h1>
+        <p>
+          Recursos vinculados con la necesidad seleccionada.
+        </p>
+      </div>
+    </div>
+
+    <div id="recommendationList" class="cards"></div>
+
+  </section>
+
+
+  <!-- PÁGINA DE RELACIONES -->
+  <section class="page" id="relaciones">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">CONOCIMIENTO CONECTADO</span>
+        <h1>Explorar relaciones</h1>
+        <p>
+          Ejemplo de cómo se conectan necesidades, temas y recursos.
+        </p>
+      </div>
+    </div>
+
+    <div class="relationship">
+
+      <div class="node">
+        Necesidad<br>
+        <strong>Organización del estudio</strong>
+      </div>
+
+      <span>→</span>
+
+      <div class="node">
+        Tema<br>
+        <strong>Hábitos de estudio</strong>
+      </div>
+
+      <span>→</span>
+
+      <div class="node">
+        Recurso<br>
+        <strong>Guía de técnicas de estudio</strong>
+      </div>
+
+    </div>
+
+    <p class="notice">
+      Representación ilustrativa de relaciones.
+      La consulta real del grafo deberá ejecutarse en Neo4j.
+    </p>
+
+  </section>
+
+
+  <!-- PÁGINA DE ADMINISTRACIÓN -->
+  <section class="page" id="admin">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">GESTIÓN</span>
+        <h1>Administración de recursos</h1>
+        <p>
+          Formulario de demostración para agregar un recurso
+          a la vista actual.
+        </p>
+      </div>
+    </div>
+
+    <form id="resourceForm" class="panel">
+
+      <label for="resourceName">
+        Nombre del recurso
+      </label>
+
+      <input
+        id="resourceName"
+        required
+        placeholder="Ej. Guía de lectura crítica"
+      >
+
+      <label for="resourceCategory">
+        Categoría
+      </label>
+
+      <select id="resourceCategory">
+        <option>Aprendizaje</option>
+        <option>Bienestar académico</option>
+        <option>Competencias digitales</option>
+      </select>
+
+      <label for="resourceTopic">
+        Tema
+      </label>
+
+      <input
+        id="resourceTopic"
+        required
+        placeholder="Ej. Comprensión lectora"
+      >
+
+      <label for="resourceDescription">
+        Descripción
+      </label>
+
+      <textarea
+        id="resourceDescription"
+        rows="3"
+        required
+        placeholder="Describe brevemente el recurso"
+      ></textarea>
+
+      <button class="primary" type="submit">
+        Agregar recurso de ejemplo
+      </button>
+
+      <p id="formMessage" class="form-message" role="status"></p>
+
+    </form>
+
+    <p class="notice">
+      La administración es local y temporal. No guarda
+      información en una base de datos ni implementa autenticación.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  EduSmart · Prototipo conceptual de Ingeniería Web · Datos ficticios
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

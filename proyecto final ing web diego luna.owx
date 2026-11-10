@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://example.org/edusmart"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://example.org/edusmart">
+    <Prefix name="" IRI="http://example.org/edusmart#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="edusmart" IRI="http://example.org/edusmart#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="es">Modelo académico de ejemplo con datos ficticios.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="es">Ontología EduSmart</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Administrador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Asesor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Categoria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estudiante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NecesidadAcademica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recomendacion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecursoEducativo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServicioAcademico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Usuario"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#abordaTema"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#atiendeNecesidad"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofreceServicio"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#orientaA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#perteneceACategoria"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#presentaNecesidad"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#recomiendaRecurso"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relacionadoConTema"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#respondeANecesidad"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneInteresEn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#activo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#descripcion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fechaPublicacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nivelDificultad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nombre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Administrador01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Asesor01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Categoria01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Estudiante01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Necesidad01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Recomendacion01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Recurso01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Servicio01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tema01"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Administrador"/>
+        <Class IRI="#Usuario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Asesor"/>
+        <Class IRI="#Usuario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Estudiante"/>
+        <Class IRI="#Usuario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recomendacion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#recomiendaRecurso"/>
+            <Class IRI="#RecursoEducativo"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recomendacion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#respondeANecesidad"/>
+            <Class IRI="#NecesidadAcademica"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecursoEducativo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#perteneceACategoria"/>
+            <Class IRI="#Categoria"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Administrador"/>
+        <NamedIndividual IRI="#Administrador01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Asesor"/>
+        <NamedIndividual IRI="#Asesor01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Categoria"/>
+        <NamedIndividual IRI="#Categoria01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estudiante"/>
+        <NamedIndividual IRI="#Estudiante01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NecesidadAcademica"/>
+        <NamedIndividual IRI="#Necesidad01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Recomendacion"/>
+        <NamedIndividual IRI="#Recomendacion01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RecursoEducativo"/>
+        <NamedIndividual IRI="#Recurso01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ServicioAcademico"/>
+        <NamedIndividual IRI="#Servicio01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tema"/>
+        <NamedIndividual IRI="#Tema01"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ofreceServicio"/>
+        <NamedIndividual IRI="#Administrador01"/>
+        <NamedIndividual IRI="#Servicio01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#orientaA"/>
+        <NamedIndividual IRI="#Asesor01"/>
+        <NamedIndividual IRI="#Estudiante01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#presentaNecesidad"/>
+        <NamedIndividual IRI="#Estudiante01"/>
+        <NamedIndividual IRI="#Necesidad01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneInteresEn"/>
+        <NamedIndividual IRI="#Estudiante01"/>
+        <NamedIndividual IRI="#Tema01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recomiendaRecurso"/>
+        <NamedIndividual IRI="#Recomendacion01"/>
+        <NamedIndividual IRI="#Recurso01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#respondeANecesidad"/>
+        <NamedIndividual IRI="#Recomendacion01"/>
+        <NamedIndividual IRI="#Necesidad01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#abordaTema"/>
+        <NamedIndividual IRI="#Recurso01"/>
+        <NamedIndividual IRI="#Tema01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#atiendeNecesidad"/>
+        <NamedIndividual IRI="#Recurso01"/>
+        <NamedIndividual IRI="#Necesidad01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#perteneceACategoria"/>
+        <NamedIndividual IRI="#Recurso01"/>
+        <NamedIndividual IRI="#Categoria01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#relacionadoConTema"/>
+        <NamedIndividual IRI="#Servicio01"/>
+        <NamedIndividual IRI="#Tema01"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre"/>
+        <NamedIndividual IRI="#Administrador01"/>
+        <Literal>Administrador de ejemplo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre"/>
+        <NamedIndividual IRI="#Asesor01"/>
+        <Literal>Asesor de ejemplo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre"/>
+        <NamedIndividual IRI="#Estudiante01"/>
+        <Literal>Estudiante de ejemplo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#activo"/>
+        <NamedIndividual IRI="#Recurso01"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#descripcion"/>
+        <NamedIndividual IRI="#Recurso01"/>
+        <Literal>Guía de técnicas de estudio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nivelDificultad"/>
+        <NamedIndividual IRI="#Recurso01"/>
+        <Literal>Básico</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#abordaTema"/>
+        <Class IRI="#RecursoEducativo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#atiendeNecesidad"/>
+        <Class IRI="#RecursoEducativo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ofreceServicio"/>
+        <Class IRI="#Administrador"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#orientaA"/>
+        <Class IRI="#Asesor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#perteneceACategoria"/>
+        <Class IRI="#RecursoEducativo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#presentaNecesidad"/>
+        <Class IRI="#Estudiante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#recomiendaRecurso"/>
+        <Class IRI="#Recomendacion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#relacionadoConTema"/>
+        <Class IRI="#ServicioAcademico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#respondeANecesidad"/>
+        <Class IRI="#Recomendacion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneInteresEn"/>
+        <Class IRI="#Estudiante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#abordaTema"/>
+        <Class IRI="#Tema"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#atiendeNecesidad"/>
+        <Class IRI="#NecesidadAcademica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ofreceServicio"/>
+        <Class IRI="#ServicioAcademico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#orientaA"/>
+        <Class IRI="#Estudiante"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#perteneceACategoria"/>
+        <Class IRI="#Categoria"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#presentaNecesidad"/>
+        <Class IRI="#NecesidadAcademica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#recomiendaRecurso"/>
+        <Class IRI="#RecursoEducativo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#relacionadoConTema"/>
+        <Class IRI="#Tema"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#respondeANecesidad"/>
+        <Class IRI="#NecesidadAcademica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneInteresEn"/>
+        <Class IRI="#Tema"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#activo"/>
+        <Class IRI="#RecursoEducativo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#descripcion"/>
+        <Class IRI="#RecursoEducativo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#fechaPublicacion"/>
+        <Class IRI="#RecursoEducativo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nivelDificultad"/>
+        <Class IRI="#RecursoEducativo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nombre"/>
+        <Class IRI="#Usuario"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#activo"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#descripcion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#fechaPublicacion"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nivelDificultad"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nombre"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
