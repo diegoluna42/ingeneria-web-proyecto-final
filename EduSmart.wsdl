@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+  name="EduSmartService"
+  targetNamespace="http://edusmart.example/soap"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:tns="http://edusmart.example/soap"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <types>
+    <xsd:schema targetNamespace="http://edusmart.example/soap"
+                elementFormDefault="qualified">
+      <xsd:element name="ObtenerRecomendaciones">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="necesidadId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ObtenerRecomendacionesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="necesidadId" type="xsd:string"/>
+            <xsd:element name="total" type="xsd:int"/>
+            <xsd:element name="recomendaciones">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="recomendacion" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="recursoId" type="xsd:string"/>
+                        <xsd:element name="nombre" type="xsd:string"/>
+                        <xsd:element name="motivo" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+
+  <message name="ObtenerRecomendacionesInput">
+    <part name="parameters" element="tns:ObtenerRecomendaciones"/>
+  </message>
+  <message name="ObtenerRecomendacionesOutput">
+    <part name="parameters" element="tns:ObtenerRecomendacionesResponse"/>
+  </message>
+
+  <portType name="EduSmartPortType">
+    <operation name="ObtenerRecomendaciones">
+      <input message="tns:ObtenerRecomendacionesInput"/>
+      <output message="tns:ObtenerRecomendacionesOutput"/>
+    </operation>
+  </portType>
+
+  <binding name="EduSmartSoapBinding" type="tns:EduSmartPortType">
+    <soap:binding style="document"
+      transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="ObtenerRecomendaciones">
+      <soap:operation soapAction="ObtenerRecomendaciones"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+  </binding>
+
+  <service name="EduSmartService">
+    <port name="EduSmartPort" binding="tns:EduSmartSoapBinding">
+      <soap:address location="http://localhost:3000/soap"/>
+    </port>
+  </service>
+</definitions>

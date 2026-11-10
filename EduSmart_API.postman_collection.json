@@ -1,0 +1,122 @@
+{
+  "info": {
+    "name": "EduSmart API - Pruebas",
+    "description": "Colección de solicitudes para probar los servicios REST demostrativos de EduSmart.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Consultar recursos",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/recursos"
+      }
+    },
+    {
+      "name": "Consultar recurso 1",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/recursos/1"
+      }
+    },
+    {
+      "name": "Consultar categorías",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/categorias"
+      }
+    },
+    {
+      "name": "Consultar necesidades",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/necesidades"
+      }
+    },
+    {
+      "name": "Registrar necesidad de estudiante",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"necesidadId\": \"N002\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/estudiantes/EST002/necesidades"
+      }
+    },
+    {
+      "name": "Consultar recomendaciones N001",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/recomendaciones?necesidadId=N001"
+      }
+    },
+    {
+      "name": "Consultar relaciones N001",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/relaciones?necesidadId=N001"
+      }
+    },
+    {
+      "name": "Crear recurso",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Estrategias de aprendizaje autónomo\",\n  \"categoria\": \"Aprendizaje\",\n  \"descripcion\": \"Material de apoyo para el aprendizaje independiente.\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/recursos"
+      }
+    },
+    {
+      "name": "Actualizar recurso 1",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"descripcion\": \"Descripción actualizada del recurso.\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/recursos/1"
+      }
+    },
+    {
+      "name": "Eliminar recurso 3",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/v1/recursos/3"
+      }
+    },
+    {
+      "name": "Consultar servicios académicos",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/servicios-academicos"
+      }
+    }
+  ]
+}

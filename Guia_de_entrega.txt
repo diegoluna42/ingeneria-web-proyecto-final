@@ -1,0 +1,16 @@
+GUÍA PARA EL INFORME Y LAS EVIDENCIAS
+
+1. Portada: nombre del proyecto EduSmart, asignatura, estudiante, docente y fecha.
+2. Introducción: propósito de los servicios web en la plataforma.
+3. Objetivo: diseñar y demostrar servicios REST y SOAP.
+4. Herramientas: Visual Studio Code, Node.js, Postman, Swagger y SoapUI.
+5. Arquitectura REST: insertar 01_Arquitectura_REST.svg.
+6. Flujo de petición: insertar 02_Flujo_Solicitud_REST.svg.
+7. Documentación: insertar 03_Documentacion_SWAGGER.svg y una captura real de Swagger UI.
+8. Pruebas: insertar 04_Pruebas_POSTMAN.svg y capturas reales de Postman.
+9. SOAP: explicar WSDL, solicitud y respuesta XML; insertar 05_Estructura_SOAP.svg y capturas reales de SoapUI.
+10. Integración semántica: insertar 06_Integracion_Semantica.svg y aclarar que es propuesta futura si no se ha conectado.
+11. Resultados: describir las pruebas realizadas y sus códigos HTTP.
+12. Conclusiones y limitaciones: indicar que el prototipo usa datos en memoria y no cuenta con autenticación ni base de datos.
+
+No presentar los diagramas como capturas de aplicaciones ejecutándose. Las capturas de Swagger, Postman y SoapUI deben tomarse después de ejecutar las pruebas reales.

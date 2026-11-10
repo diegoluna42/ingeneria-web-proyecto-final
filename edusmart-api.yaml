@@ -1,0 +1,173 @@
+openapi: 3.0.3
+info:
+  title: EduSmart API
+  version: 1.0.0
+  description: >
+    API REST demostrativa para consultar recursos educativos, registrar
+    necesidades académicas y obtener recomendaciones.
+servers:
+  - url: http://localhost:3000
+    description: Servidor local de demostración
+tags:
+  - name: Recursos
+  - name: Categorías
+  - name: Necesidades
+  - name: Recomendaciones
+  - name: Relaciones
+  - name: Servicios académicos
+paths:
+  /api/v1/recursos:
+    get:
+      tags: [Recursos]
+      summary: Consultar recursos educativos
+      parameters:
+        - in: query
+          name: categoria
+          schema: { type: string }
+        - in: query
+          name: buscar
+          schema: { type: string }
+      responses:
+        "200":
+          description: Lista de recursos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total: { type: integer }
+                  datos:
+                    type: array
+                    items: { $ref: "#/components/schemas/Recurso" }
+    post:
+      tags: [Recursos]
+      summary: Crear un recurso educativo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [nombre, categoria, descripcion]
+              properties:
+                nombre: { type: string }
+                categoria: { type: string }
+                descripcion: { type: string }
+      responses:
+        "201": { description: Recurso creado }
+        "400": { description: Datos incompletos }
+  /api/v1/recursos/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: integer }
+    get:
+      tags: [Recursos]
+      summary: Consultar un recurso por identificador
+      responses:
+        "200": { description: Recurso encontrado }
+        "404": { description: Recurso no encontrado }
+    patch:
+      tags: [Recursos]
+      summary: Actualizar parcialmente un recurso
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre: { type: string }
+                categoria: { type: string }
+                descripcion: { type: string }
+      responses:
+        "200": { description: Recurso actualizado }
+        "404": { description: Recurso no encontrado }
+    delete:
+      tags: [Recursos]
+      summary: Desactivar un recurso
+      responses:
+        "204": { description: Recurso desactivado }
+        "404": { description: Recurso no encontrado }
+  /api/v1/categorias:
+    get:
+      tags: [Categorías]
+      summary: Consultar categorías
+      responses:
+        "200": { description: Categorías encontradas }
+  /api/v1/necesidades:
+    get:
+      tags: [Necesidades]
+      summary: Consultar catálogo de necesidades académicas
+      responses:
+        "200": { description: Necesidades encontradas }
+  /api/v1/estudiantes/{id}/necesidades:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Necesidades]
+      summary: Consultar necesidades registradas de un estudiante
+      responses:
+        "200": { description: Registros encontrados }
+    post:
+      tags: [Necesidades]
+      summary: Registrar una necesidad académica
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [necesidadId]
+              properties:
+                necesidadId: { type: string, example: N001 }
+      responses:
+        "201": { description: Necesidad registrada }
+        "400": { description: Solicitud inválida }
+        "404": { description: Necesidad no encontrada }
+  /api/v1/recomendaciones:
+    get:
+      tags: [Recomendaciones]
+      summary: Obtener recomendaciones por necesidad
+      parameters:
+        - in: query
+          name: necesidadId
+          required: true
+          schema: { type: string, example: N001 }
+      responses:
+        "200": { description: Recomendaciones encontradas }
+        "400": { description: Falta necesidadId }
+        "404": { description: Necesidad no encontrada }
+  /api/v1/relaciones:
+    get:
+      tags: [Relaciones]
+      summary: Consultar relaciones semánticas por necesidad
+      parameters:
+        - in: query
+          name: necesidadId
+          required: true
+          schema: { type: string, example: N001 }
+      responses:
+        "200": { description: Relaciones encontradas }
+        "400": { description: Falta necesidadId }
+        "404": { description: Necesidad no encontrada }
+  /api/v1/servicios-academicos:
+    get:
+      tags: [Servicios académicos]
+      summary: Consultar servicios de apoyo académico
+      responses:
+        "200": { description: Servicios encontrados }
+components:
+  schemas:
+    Recurso:
+      type: object
+      properties:
+        id: { type: integer, example: 1 }
+        nombre: { type: string, example: Guía de técnicas de estudio }
+        categoria: { type: string, example: Aprendizaje }
+        descripcion: { type: string }
+        activo: { type: boolean, example: true }

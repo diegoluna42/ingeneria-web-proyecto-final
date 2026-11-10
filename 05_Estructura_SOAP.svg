@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+    <rect width="100%" height="100%" fill="#f7f9fc"/>
+    <text x="600" y="65" text-anchor="middle" font-family="Arial" font-size="34" font-weight="bold" fill="#12304a">Estructura de servicio SOAP</text>
+    <text x="600" y="105" text-anchor="middle" font-family="Arial" font-size="19" fill="#475467">Intercambio estructurado de mensajes XML</text>
+    
+        <rect x="300" y="170" width="600" height="76" rx="14" fill="#dbeafe" stroke="#344054" stroke-width="2"/>
+        <text x="600" y="201" text-anchor="middle" font-family="Arial" font-size="23" font-weight="bold" fill="#172033">Cliente SOAP</text>
+        <text x="600" y="227" text-anchor="middle" font-family="Arial" font-size="16" fill="#344054">Solicita ObtenerRecomendaciones</text><path d="M600 247 V260" stroke="#344054" stroke-width="3" fill="none"/><path d="M590 248 L600 260 L610 248" stroke="#344054" stroke-width="3" fill="none"/>
+        <rect x="300" y="265" width="600" height="76" rx="14" fill="#e0f2fe" stroke="#344054" stroke-width="2"/>
+        <text x="600" y="296" text-anchor="middle" font-family="Arial" font-size="23" font-weight="bold" fill="#172033">Envelope XML</text>
+        <text x="600" y="322" text-anchor="middle" font-family="Arial" font-size="16" fill="#344054">Sobre que contiene el mensaje SOAP</text><path d="M600 342 V355" stroke="#344054" stroke-width="3" fill="none"/><path d="M590 343 L600 355 L610 343" stroke="#344054" stroke-width="3" fill="none"/>
+        <rect x="300" y="360" width="600" height="76" rx="14" fill="#dcfce7" stroke="#344054" stroke-width="2"/>
+        <text x="600" y="391" text-anchor="middle" font-family="Arial" font-size="23" font-weight="bold" fill="#172033">Header / Body</text>
+        <text x="600" y="417" text-anchor="middle" font-family="Arial" font-size="16" fill="#344054">Metadatos opcionales y contenido de la operación</text><path d="M600 437 V450" stroke="#344054" stroke-width="3" fill="none"/><path d="M590 438 L600 450 L610 438" stroke="#344054" stroke-width="3" fill="none"/>
+        <rect x="300" y="455" width="600" height="76" rx="14" fill="#fef3c7" stroke="#344054" stroke-width="2"/>
+        <text x="600" y="486" text-anchor="middle" font-family="Arial" font-size="23" font-weight="bold" fill="#172033">Servicio EduSmart SOAP</text>
+        <text x="600" y="512" text-anchor="middle" font-family="Arial" font-size="16" fill="#344054">Procesa la operación solicitada</text><path d="M600 532 V545" stroke="#344054" stroke-width="3" fill="none"/><path d="M590 533 L600 545 L610 533" stroke="#344054" stroke-width="3" fill="none"/>
+        <rect x="300" y="550" width="600" height="76" rx="14" fill="#f3e8ff" stroke="#344054" stroke-width="2"/>
+        <text x="600" y="581" text-anchor="middle" font-family="Arial" font-size="23" font-weight="bold" fill="#172033">Respuesta XML</text>
+        <text x="600" y="607" text-anchor="middle" font-family="Arial" font-size="16" fill="#344054">Devuelve recomendaciones estructuradas</text>
+    <text x="600" y="820" text-anchor="middle" font-family="Arial" font-size="14" fill="#667085">EduSmart | Diagrama conceptual para documentación académica</text>
+    </svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:ed="http://edusmart.example/soap">
+  <soap:Header/>
+  <soap:Body>
+    <ed:ObtenerRecomendaciones>
+      <ed:necesidadId>N001</ed:necesidadId>
+    </ed:ObtenerRecomendaciones>
+  </soap:Body>
+</soap:Envelope>

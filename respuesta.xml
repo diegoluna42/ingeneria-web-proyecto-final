@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:ed="http://edusmart.example/soap">
+  <soap:Body>
+    <ed:ObtenerRecomendacionesResponse>
+      <ed:necesidadId>N001</ed:necesidadId>
+      <ed:total>2</ed:total>
+      <ed:recomendaciones>
+        <ed:recomendacion>
+          <ed:recursoId>2</ed:recursoId>
+          <ed:nombre>Organización del tiempo</ed:nombre>
+          <ed:motivo>Apoya la planificación de actividades y horarios.</ed:motivo>
+        </ed:recomendacion>
+        <ed:recomendacion>
+          <ed:recursoId>1</ed:recursoId>
+          <ed:nombre>Guía de técnicas de estudio</ed:nombre>
+          <ed:motivo>Complementa la organización con hábitos de estudio.</ed:motivo>
+        </ed:recomendacion>
+      </ed:recomendaciones>
+    </ed:ObtenerRecomendacionesResponse>
+  </soap:Body>
+</soap:Envelope>
